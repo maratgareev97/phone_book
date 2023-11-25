@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        table {
+            width:100%;
+        }
+        h1 {
+            text-align:center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<!--<form action="/" method="get">-->
+<!--    <p><input type="text" name="createTable" value=""><Br>-->
+<!--    <p><input type="text" name="createTable1" value=""><Br>-->
+<!--    <p><input type="submit"></p>-->
+<!--</form>-->
+<h1>Телефонная книга</h1>
+<table>
+    <tr>
+        <td></td>
+        <th>id</th>
+        <th>Имя</th>
+        <th>Телефон</th>
+        <th>Описание</th>
+        <td></td>
+    </tr>
+    <form action="/" method="get">
+    {%for i in dataTable%}
+    <tr>
+        <td><input type="radio" name="delete" value="{{i.id}}"></td>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.phone}}</td>
+        <td>{{i.description}}</td>
+        <td><a href="edit/{{i.id}}">Редакторовать</a></td>
+    </tr>
+    {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input type="text" name="new_name"></td>
+            <td><input type="text" name="new_phone"></td>
+            <td><input type="text" name="new_description"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="submit"></td>
+        </tr>
+
+    </form>
+</table>
+
+<!--<form action="/" method="get">-->
+<!--    <p><input type="radio" name="r" value="r1">Офицерский состав<Br>-->
+<!--        <input type="radio" name="r" value="r2">Операционная система<Br>-->
+<!--        <input type="radio" name="r" value="r3">Большой полосатый мух</p>-->
+<!--    <p><input type="submit"></p>-->
+<!--</form>-->
+
+<!--<form action="/" method="get">-->
+<!--    <p><input type="checkbox" name="ch1" value="a">Офицерский состав<Br>-->
+<!--        <input type="checkbox" name="ch2" value="b">Операционная система<Br>-->
+<!--        <input type="checkbox" name="ch3" value="c">Большой полосатый мух</p>-->
+<!--    <p><input type="submit"></p>-->
+</form>
+
+</body>
+</html>
